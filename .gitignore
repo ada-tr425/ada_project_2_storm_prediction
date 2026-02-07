@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+
+# Project outputs (do not commit)
+outputs/
+data/
+predicting_unpredictable.egg-info/
+
+# Documentation build outputs
+docs/_build/
+docs/api/predicting_unpredictable*.rst
+docs/api/_autosummary/

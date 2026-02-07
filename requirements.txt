@@ -1,0 +1,19 @@
+# Core scientific stack
+numpy
+pandas
+h5py
+
+# Downloading datasets
+huggingface_hub
+
+# Deep learning (PyTorch)
+torch
+
+# Visualization / reporting
+matplotlib
+
+# Metrics (optional but useful for Task3 Macro-F1)
+scikit-learn
+
+# Testing
+pytest

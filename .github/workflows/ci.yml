@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: ["main", "dev", "feature-preprocess"]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  python-ci:
+    name: Python smoke checks (3.11)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: |
+            requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install flake8
+
+      - name: Flake8
+        run: |
+          flake8 predicting_unpredictable
+
+      - name: Byte-compile (syntax check)
+        run: |
+          python -m compileall predicting_unpredictable .
+
+      - name: Import smoke test
+        run: |
+          python -c "import predicting_unpredictable"
+          python -c "import predicting_unpredictable.data"
+          python -c "import predicting_unpredictable.preprocess"
+          python -c "import predicting_unpredictable.submission"
+
+      - name: Pytest
+        run: |
+          pytest -q
+
+      - name: Dependency health check
+        run: |
+          python -m pip check
