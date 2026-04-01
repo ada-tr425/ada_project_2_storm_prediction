@@ -57,7 +57,7 @@ cd docs && make html
 - [Colab：数据下载与探索示例](https://colab.research.google.com/drive/15Rw4zi3V8S9g4h89KJ28LPzZakDJAT0r?usp=sharing)
 - [Colab：Surprise storms 说明与提交指引](https://colab.research.google.com/drive/19OuZsdBfTslpJdY60T8BOhbRKOtSP-XX?usp=sharing)
 
-### 期末报告笔记本
+### 最终报告笔记本
 
 请将最终 Jupyter 笔记本放在 `notebooks-final/` 目录，并使用提供的[模板](notebooks-final/Task-%5Bnumber%5D-report.ipynb)。
 
