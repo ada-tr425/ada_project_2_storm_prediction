@@ -1,17 +1,5 @@
 # TEAM_CONVENTIONS.md
 
-## Team Sally
-
-- Fuchs, Ava R
-- HU, Wenzhi
-- LI, Zhifeng
-- Pejic, Milica
-- RAO, Tingyu
-- Takatani, Masahiko
-- WU, Jiayu
-- Yu, Zirui
-- ZHANG, Wanyu
-
 ## Installation
 
 ```bash
